@@ -1,0 +1,33 @@
+<html ng-app="ToDoListApp">
+
+<head>
+    <title>TO DO List</title>
+    <!--Angular-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!--JavaScript-->
+    <script type="text/javascript" src="app.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="ListController">
+    <h1>DEMO ANGULAR PROJECT</h1>
+    <hr>
+    <h3>MY TO DO LIST</h3>
+    <h4> Items so far {{list.length}}</h4>
+    <table>
+        <tr ng-repeat="item in list">
+            <td>{{$index + 1}}</td>
+            <td>{{item}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="remove(item)">X</button></td>
+        </tr>
+    </table>
+    <hr>
+    <input type="text" ng-model="newItem">
+    <button class="btn btn-success" ng-click="addItem(newItem)">ADD</button>
+</body>
+
+</html>
